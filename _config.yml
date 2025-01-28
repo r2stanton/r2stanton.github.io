@@ -23,8 +23,8 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Robert Stanton"
-  pronouns         : "he/him"  
-  bio              : "I am currently a Postdoc Researcher at Los Alamos National Laboratory. My PhD was in Physics with a focus on computational materials science. My main interests are quantitative finance, machine learning, and mathematical physics."
+  #pronouns         : ""  
+  bio              : "Postdoctoral Researcher at Los Alamos National Laboratory \n PhD in Physics from Clarkson University" 
   location         : "Los Alamos, NM"
   employer         : "Los Alamos National Laboratory"
   uri              : # URL
