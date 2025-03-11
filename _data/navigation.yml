@@ -8,15 +8,15 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Talks"
-    url: /talks/    
+  - title: "Data Visualization"
+    url: /visualization/    
 
-  - title: "Teaching"
-    url: /teaching/    
-    
   - title: "Portfolio"
     url: /portfolio/
-        
+
+  - title: "Quantitative Finance"
+    url: /finance/    
+    
   - title: "Blog Posts"
     url: /year-archive/
     

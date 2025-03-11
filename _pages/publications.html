@@ -5,8 +5,21 @@ permalink: /publications/
 author_profile: true
 ---
 
+<style>
+  /* Custom styling to make font smaller throughout the publications page */
+  .page__content p,
+  .page__content li,
+  .page__content .archive__item-title,
+  .page__content .archive__item-excerpt,
+  .page__content h2,
+  .page__content .wordwrap,
+  .page__content a {
+    font-size: 0.22em !important;
+  }
+</style>
+
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+  <div class="wordwrap">Check out <a href="{{https://scholar.google.com/citations?hl=en&user=sh0n0bYAAAAJ}}">my Google Scholar profile for more details</a>.</div>
 {% endif %}
 
 {% include base_path %}
