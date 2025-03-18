@@ -11,21 +11,21 @@ This post assumes some understanding of pairs trading and statistical arbitrage 
 
 ### Brief Recap of Cointegration
 
-A typical approach to learning about pairs trading is to find pairs for which a cointegrated time series can be obtained from the linear combination of two $$I(1)$$ time series. In other words, we seek an $$I(0)$$ process $$\epsilon(t)$$ such that:
+A typical approach to pairs trading is to seek a cointegrated time series which can be obtained from the linear combination of two $$I(1)$$ time series. In other words, we seek an $$I(0)$$ process $$\epsilon(t)$$ such that:
 
 $$\epsilon(t, p_1(t), p_2(t)) = \alpha p_1(t) + \beta p_2(t)$$
 
-where $$p_1(t)$$ and $$p_2(t)$$ are two prices series associated with the underlying assets being traded. Without loss of generality (other than a constant scaling of $$\epsilon$$), we can write this equation as:
+where $$p_1(t)$$ and $$p_2(t)$$ are two price time series for the underlying assets being traded. Without loss of generality (other than a constant scaling of $$\epsilon$$), we can write this equation as:
 
 $$\epsilon(t, p_1(t), p_2(t)) = p_1(t) + B p_2(t)$$
 
-This is is a nice, intuitive result. If $$\epsilon$$ is $$I(0)$$, then all we need to do is use the hedge ratio ($$B$$) to purchase particular combinations of the two assets such that when $$\epsilon$$ is far from the mean around which it is stationary, we enter into a position which profits from a mean reversion.
+This is is a nice, intuitive result. If $$\epsilon$$ is $$I(0)$$, then all we need to do is use the hedge ratio ($$B$$) to enter positions on the two assets such that when $$\epsilon$$ is far from the mean (around which it is stationary), we enter into a long/short position that profits from a mean reversion.
 
-A number of practical problems arise when one goes from learning this theoretical knowledge to attempting an implementation of it for their own model development.
+A number of practical problems arise when one aims to implement this nice theoretical framework in practice. A few of these are:
 
 1. The same signals for entries can indicate a breaking of the cointegration relationship. Given that statarb strategies are based on these relatively small profits aggregated over a large number of trades (and pairs), the tail risk associated with these decoupling events *must* be avoided.
 
-2. The optimal hedge ratio is not constant. This introduces an optimization problem where one must balance the practicality (and costs) of constant portfolio rebalancing against the sensitivity of the cointegration relationship to the hedge ratio. In other words, if you have a function characterizing the stationariy of your cointegration $$f(\epsilon)$$, then you really should care a lot about $$\frac{\partial f}{\partial B}$$.
+2. The optimal hedge ratio is not constant. This introduces an optimization problem where one must balance the practicality (and costs) of constant portfolio rebalancing against the sensitivity of the cointegration relationship to the hedge ratio. In other words, if you have a function(al) characterizing the stationarity of your cointegration $$f: \epsilon \to \mathbb R$$, then you really should care a lot about $$\frac{\partial f}{\partial B}$$.
 
 3. Finding a sufficiently large set of pairs to trade is, in and of itself, not straightforward.
 
@@ -35,7 +35,7 @@ Points number 1, and 2 will be addressed in another set of posts, but for now we
 
 When learning about statistical arbitrage, one is often presented with an example of a pair which is cointegrated, and one which is not.
 In reality one will find that truly cointegrated pairs are rare.
-What then is a straightforward strategy for finding pairs which are cointegrated? This is a bit of a tedious process, and it's the thing that initially caused me to develop my Starbie package.
+What then is a straightforward strategy for finding pairs which are cointegrated? This is a bit of a tedious process, and it's the thing that initially caused me to develop my starbie package.
 
 ![Starbie Package](/images/starbie.png){: width="50%"}
 
@@ -133,7 +133,7 @@ This results in the following plot for a pair_find over some tech stocks. The bl
 
 ![Visualization](/images/cointExampleStarbie.png){: width="100%"}
 
-None of these were particularly my taste, but feel free to check them out for yourself. Thanks for reading, and feel free to look through my other posts.
+This timeframe is not particularly my taste, but feel free to check them out for yourself. Thanks for reading, and feel free to look through my other posts.
 
 
 
